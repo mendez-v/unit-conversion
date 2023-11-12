@@ -1,0 +1,166 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body, h1, h2, p {
+  margin: 0;
+}
+body {
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  place-items: center;
+  background-color: var(--bg-body);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+:root {
+  --bg-body: #C4B5FD;
+  --bg-subcard: #452373;
+  --accent: #FFC107;
+  --primary: #F5F3FF;
+  --secondary: #9400FF;
+  --tertiary: #27005D;
+}
+
+.card {
+  margin-block: 1em;
+  inline-size: 95vw;
+  min-inline-size: 23rem;
+  color: var(--primary);
+  border-radius: .5em;
+  overflow: hidden;
+}
+@media (width > 32.82rem) {
+  .card {
+    inline-size: initial;
+  }
+}
+.card__header, 
+.card__body {
+  padding: 1.5em 2.5em;
+}
+.card__header {
+  background-color: var(--secondary);
+  text-align: center;
+}
+.card__title {
+  margin-bottom: 1em;
+  text-transform: capitalize;
+  font-size: 1.75rem;
+}
+.card__form {
+  display: grid;
+  place-items: center;
+  gap: 1.5em;
+}
+.input-el {
+  inline-size: 10rem;
+  block-size: 4.5rem;
+  font-size: 3.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: inherit;
+  background-color: transparent;
+  border: .01em solid currentColor;
+  border-radius: .1em;
+}
+.btn-el {
+  padding: .5em 1.5em;
+  text-transform: capitalize;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary);
+  background-color: var(--tertiary);
+  border: .1em solid transparent;
+  border-radius: .3em;
+  transition: color .2s ease-in-out, background-color .2s ease-in-out;
+}
+.card__body {
+  display: grid;
+  gap: 1em;
+  background-color: var(--tertiary);
+}
+.sub-card {
+  padding: 1.3em;
+  text-align: center;
+  background-color: var(--bg-subcard);
+  border-radius: .3em;
+}
+.sub-card__title {
+  margin-bottom: .5em;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  color: var(--accent);
+}
+.sub-card__result {
+  font-size: .95rem;
+}
+
+.attribution {
+  margin-top: -2.5rem;
+  padding-block: 2em;
+  font-weight: 500;
+  text-align: center;
+  color: var(--tertiary);
+}
+
+.attribution__link {
+  margin-inline: .3em;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+}
+.attribution__link::after {
+  content: "";
+  inline-size: 100%;
+  block-size: .15em;
+  background-color: currentColor;
+  position: absolute;
+  right: 0;
+  bottom: -.2em;
+  transition: inline-size .3s ease-in-out;
+}
+
+/* Elimina los botones incremento/decremento */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance:textfield !important;
+  appearance:textfield !important;
+}
+
+.btn-el:disabled {
+  opacity: .5;
+}
+.input-el:focus-visible {
+  outline: .05em dotted currentColor;
+  outline-offset: .05em;
+}
+.btn-el:focus-visible,
+.attribution__link:focus-visible {
+  outline: .15em dotted currentColor;
+  outline-offset: .15em;
+}
+.attribution__link:focus-visible {
+  outline-offset: .3em;
+}
+
+@media (hover:hover) {
+  .btn-el:hover {
+    cursor: grab;
+    color: var(--tertiary);
+    background-color: var(--primary);
+  }
+  .attribution__link:hover::after {
+    inline-size: 0;
+    left: 0;
+  }
+}
+

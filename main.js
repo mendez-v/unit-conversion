@@ -17,7 +17,6 @@ const unit = {
 formEl.addEventListener("submit", (evt) => {
   evt.preventDefault()
   formEl.reset()
-  inputEl.focus()
   btnEl.setAttribute("disabled", "")
 })
 inputEl.addEventListener("input", () => {

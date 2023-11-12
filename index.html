@@ -5,28 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit Conversion</title>
   <link rel="icon" href="./assets/img/favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
   <script src="./main.js" defer></script>
 </head>
 <body>
-  <main class="main">
-    <article class="unit-conversion">
-      <h1 class="tilte">metric/imperial unit conversion</h1>
-      <form action="#" id="form-el" class="form-el" autocomplete="off">
-        <input type="number" id="input-el" class="input-el" min="0" max="1000" autofocus>
-        <button id="btn-el" class="btn-el" disabled>convert</button>
-      </form>
-      <div class="result">
-        <section class="card">
-          <h2 class="card__title">length (meter/feet)</h2>
-          <p id="length-result" class="card__result"></p>
+  <main>
+    <article class="card">
+      <header class="card__header">
+        <h1 class="card__title">metric/imperial unit conversion</h1>
+        <form action="#" id="form-el" class="card__form" autocomplete="off">
+          <input type="number" id="input-el" class="input-el" min="0" max="1000" autofocus>
+          <button id="btn-el" class="btn-el" disabled>convert</button>
+        </form>
+      </header>
+      <div class="card__body">
+        <section class="sub-card">
+          <h2 class="sub-card__title">length (meter/feet)</h2>
+          <p id="length-result" class="sub-card__result">0 meters = 0 feet | 0 feet = 0 meters</p>
         </section>
-        <section class="card">
-          <h2 class="card__title">volume (liters/gallons)</h2>
-          <p id="volume-result" class="card__result"></p>
+        <section class="sub-card">
+          <h2 class="sub-card__title">volume (liters/gallons)</h2>
+          <p id="volume-result" class="sub-card__result">0 liters = 0 gallons | 0 gallons = 0 liters</p>
         </section>
-        <section class="card">
-          <h2 class="card__title">mass (kilograms/pounds)</h2>
-          <p id="mass-result" class="card__result"></p>
+        <section class="sub-card">
+          <h2 class="sub-card__title">mass (kilograms/pounds)</h2>
+          <p id="mass-result" class="sub-card__result">0 kilos = 0 pounds | 0 pounds = 0 kilos</p>
         </section>
       </div>
     </article>
